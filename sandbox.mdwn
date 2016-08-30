@@ -30,5 +30,6 @@ Bulleted list
 * *item*
 * item
   * sub-item
+  * *sub*-item
 
 [[ikiwiki/WikiLink]]
