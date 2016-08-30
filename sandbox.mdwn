@@ -35,6 +35,8 @@ Bulleted list
          code block in the list
          it's indented 4+ spaces more than the previous thing
 
+* continuing the list at the top level
+
 Paragraph with `inline code`
 
       code block
