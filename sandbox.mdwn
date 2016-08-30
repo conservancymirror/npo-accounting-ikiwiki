@@ -32,7 +32,6 @@ Bulleted list
   * sub-item
   * *sub*-item
 
-    code block
-    block of code
+Paragraph with `inline code`
 
 [[ikiwiki/WikiLink]]
