@@ -34,4 +34,7 @@ Bulleted list
 
 Paragraph with `inline code`
 
+      code block
+      it's a block of code
+
 [[ikiwiki/WikiLink]]
