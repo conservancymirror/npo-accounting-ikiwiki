@@ -56,7 +56,7 @@ following conditions:
 
 Using these same conditions, the administrator can define questions that are
 conditional on other questions' answers.  These questions are only presented
-to the requestor when they submit an answer that meets the specified conditions.
+to the requestors when they submit an answer that meets the specified conditions.
 For illustration purposes, the common deployment is expected to have
 relatively few unconditional questions about each expense (type of expense,
 receipt, amount), and then a series of conditional questions based on those
@@ -65,7 +65,7 @@ accommodations expenses, etc.).
 
 ### Requestor workflow
 
-Requestor can log in and see the status of all their requests.  They can also
+Requestors can log in and see the status of all their requests.  They can also
 create a new request, which starts either the Pre-Approval or the In Progress
 state.
 
@@ -98,7 +98,7 @@ Submitted state.
 
 Bookkeepers can log into the system and see all requests.
 
-When a bookkeeper reviews a Submitted report, they can change the report's
+When bookkeepers reviews a Submitted report, they can change the report's
 state, and include a note explaining why the report was moved to that state
 (e.g., moved back to In Progress because a specific receipt was insufficient
 documentation).  When they do this, the system sends e-mail to the requestor
