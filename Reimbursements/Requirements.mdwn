@@ -1,31 +1,34 @@
-# Requirements for the Reimbursement System
+# Requirements for the Reimbursement and Outgoing Payment Request System
 
 ## Overview
 
 One short-term goal of the Non-Profit Accounting Project is to create a
-system that allows members of an organization to submit requests for
-reimbursement, and the organization's bookkeepers to review those requests
-and add them to the organization's books.  The primary umotivation for this
-project is to save time both groups spend on handling reimbursement requests,
-and reduce turnaround time for these requests, by helping members file
-complete requests that are easy for bookkeepers to review and accept.
+system that allows (a) members of an organization, and external parties, to
+submit requests for reimbursement or request for payment (e.g., invoices),
+and (b) the organization's bookkeepers, accountants, and managerial approvers
+to review those requests, add them to the organization's books, and prepare
+payment.  The primary motivation for this project is to save time both groups
+spend on handling reimbursement requests and outgoing payments, and reduce
+turnaround time for these requests, and to help members file complete
+requests that are easy for bookkeepers to review and accept.
 
 Members of the organization could be employees, members of projects
 represented by the organization, or others doing work to advance the
-organization's mission—anyone who the organization might want to reimburse.
+organization's mission—anyone who the organization might want to reimburse or
+pay.
 
-The system should not have knowledge of specific reimbursement policies
-written into it.  Instead, it should be possible for a bookkeeper or
-administrator to define follow-up questions and what responses are and are
-not eligible for reimbursement.  Early versions may require sysadmin-level
-technical expertise to do this, but ultimately it should be doable by a
-bookkeeper with appropriate privileges.
+The system should not make assumptions about specific reimbursement policies
+or invoicing requirements.  Instead, it should be possible for a bookkeeper
+or administrator to define follow-up questions and what responses are and are
+not eligible for reimbursement or payment.  Early versions may require
+sysadmin-level technical expertise to do this, but ultimately it should be
+doable by a bookkeeper with appropriate privileges.
 
 ## Requirements for first release
 
 ### Defining the request form
 
-Requests for reimbursement have four states: In Progress, Submitted,
+Requests for payment have four states: In Progress, Submitted,
 Accepted, and Rejected.
 
 Administrators can define questions to ask the member about the entire
@@ -77,8 +80,8 @@ follow-up questions as necessary based on those answers.
 When an In Progress report has at least one expense associated with it, and
 all questions have been answered, the member may submit the request for
 approval.  If any of the answers do not meet the administrator's conditions
-for reimbursement, the member may still submit the request, and provide an
-explanation for why the expense should be reimbursed (e.g., because it was
+for payment, the member may still submit the request, and provide an
+explanation for why the request should be paid (e.g., because it was
 approved in advance).  Once the request is submitted, it moves to the
 Submitted state.
 
@@ -117,7 +120,7 @@ built.
 * Usable without JavaScript: For consistent mission advocacy, it's important
   that some organizations not require members to use JavaScript.  (e.g., Tor
   browsers typically have JavaScript disabled because it can undermine Tor's
-  anonymity guarantees.)  It should be possible to submit reimbursement
+  anonymity guarantees.)  It should be possible to submit payment
   requests without JavaScript.  The interface can be enhanced when JavaScript
   is available.
   
