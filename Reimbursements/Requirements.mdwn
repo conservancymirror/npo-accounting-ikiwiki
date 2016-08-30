@@ -140,6 +140,8 @@ built.
   with the flow, then work to add JavaScript-free functionality in a later
   release.
   
+  In any case, Javascript used will respect software freedom of users and, *if
+  possible*, will adhere to LibreJS protocols.
 
 ## Requirements for later releases
 
