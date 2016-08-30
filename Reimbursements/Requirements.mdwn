@@ -146,9 +146,9 @@ built.
 ## Requirements for later releases
 
 These are features that we would ultimately like the system to have, but we
-know aren't necessary for the first version.  It's good to keep them in mind
-when architecting, but also to know that they've been considered and aren't
-immediately necessary.
+know aren't possible for the first version given time allotted for its
+development.  It's good to keep them in mind when architecting, but also to
+know that they've been considered and aren't immediately possible.
 
 * Allow optional questions: With this, question conditions probably need to
 be extended to address the case of "other question isn't answered"
