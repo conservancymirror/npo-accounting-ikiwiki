@@ -31,7 +31,7 @@ doable by a bookkeeper with appropriate privileges.
 Requests for payment have four states: In Progress, Submitted,
 Accepted, and Rejected.
 
-Administrators can define questions to ask the member about the entire
+Administrators can define questions to ask the requestor about the entire
 request, and about each expense in the request.  The system can display
 forms, validate answers, and record answers for questions with the following
 types of answers:
@@ -45,7 +45,7 @@ types of answers:
 * File upload
 
 For each question, the administrator can define any number of conditions to
-check against the member's answer.  When a member submits an answer that does
+check against the requestor's answer.  When a requestor submits an answer that does
 not comply with all of the conditions, the answer is flagged in the interface
 as making the expense non-reimuburseable.  The first release must support the
 following conditions:
@@ -56,31 +56,31 @@ following conditions:
 
 Using these same conditions, the administrator can define questions that are
 conditional on other questions' answers.  These questions are only presented
-to the member when they submit an answer that meets the specified conditions.
+to the requestor when they submit an answer that meets the specified conditions.
 For illustration purposes, the common deployment is expected to have
 relatively few unconditional questions about each expense (type of expense,
 receipt, amount), and then a series of conditional questions based on those
 answers (e.g., follow-up questions specific to airfare expenses,
 accommodations expenses, etc.).
 
-### Member workflow
+### Requestor workflow
 
-Members can log in and see the status of all their requests.  They can also
+Requestor can log in and see the status of all their requests.  They can also
 create a new request, which starts in the In Progress state.
 
 When they view a report, it shows the questions and answers about the entire
 report, and a list of associated expenses.  Viewing a specific expense
 similarly shows all the questions and answers about it.
 
-When a report is In Progress state, the member can edit any answer in the
+When a report is In Progress state, the requestor can edit any answer in the
 report or an associated expense.  They can also add an expense, which begins
 by asking them unconditional questions associated with expenses, and then
 follow-up questions as necessary based on those answers.
 
 When an In Progress report has at least one expense associated with it, and
-all questions have been answered, the member may submit the request for
+all questions have been answered, the requestor may submit the request for
 approval.  If any of the answers do not meet the administrator's conditions
-for payment, the member may still submit the request, and provide an
+for payment, the requestor may still submit the request, and provide an
 explanation for why the request should be paid (e.g., because it was
 approved in advance).  Once the request is submitted, it moves to the
 Submitted state.
@@ -92,7 +92,7 @@ Bookkeepers can log into the system and see all requests.
 When a bookkeeper reviews a Submitted report, they can change the report's
 state, and include a note explaining why the report was moved to that state
 (e.g., moved back to In Progress because a specific receipt was insufficient
-documentation).  When they do this, the system sends e-mail to the member
+documentation).  When they do this, the system sends e-mail to the requestor
 letting them know about the change, including the rationale provided by the
 bookkeeper.
 
@@ -118,7 +118,7 @@ built.
   "free."
   
 * Usable without JavaScript: For consistent mission advocacy, it's important
-  that some organizations not require members to use JavaScript.  (e.g., Tor
+  that some organizations not require requestor to use JavaScript.  (e.g., Tor
   browsers typically have JavaScript disabled because it can undermine Tor's
   anonymity guarantees.)  It should be possible to submit payment
   requests without JavaScript.  The interface can be enhanced when JavaScript
