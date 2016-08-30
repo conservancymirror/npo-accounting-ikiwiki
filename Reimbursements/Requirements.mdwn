@@ -28,7 +28,7 @@ doable by a bookkeeper with appropriate privileges.
 
 ### Defining the request form
 
-Requests for payment have four states: In Progress, Submitted,
+Requests for payment have five states: Pre-Approval, In Progress, Submitted,
 Accepted, and Rejected.
 
 Administrators can define questions to ask the requestor about the entire
@@ -66,11 +66,20 @@ accommodations expenses, etc.).
 ### Requestor workflow
 
 Requestor can log in and see the status of all their requests.  They can also
-create a new request, which starts in the In Progress state.
+create a new request, which starts either the Pre-Approval or the In Progress
+state.
 
 When they view a report, it shows the questions and answers about the entire
 report, and a list of associated expenses.  Viewing a specific expense
 similarly shows all the questions and answers about it.
+
+When a report is in the Pre-Approval state, the requestor is submitting not
+receipts or invoices, but documents regarding potential expenses that have
+not yet been incurred, but for which organization policies require
+preapproval by organizational management ahead of time.  The appropriate
+management representatives are duly notified by the system of pending
+Pre-Approval requests, and their approval moves the request into the In
+Progress state.  Their rejection moves the request to the Rejected sate.
 
 When a report is In Progress state, the requestor can edit any answer in the
 report or an associated expense.  They can also add an expense, which begins
