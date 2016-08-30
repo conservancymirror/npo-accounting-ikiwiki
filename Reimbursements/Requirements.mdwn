@@ -101,7 +101,7 @@ Bookkeepers can log into the system and see all requests.
 When bookkeepers review a Submitted report, they can change the report's
 state, and include a note explaining why the report was moved to that state
 (e.g., moved back to In Progress because a specific receipt was insufficient
-documentation).  When they do this, the system sends e-mail to the requestor
+documentation).  When they do this, the system sends email to the requestor
 letting them know about the change, including the rationale provided by the
 bookkeeper.
 
