@@ -1,0 +1,72 @@
+# Requirements for the Reimbursement System
+
+## Overview
+
+One short-term goal of the Non-Profit Accounting Project is to create a system that allows members of an organization to submit requests for reimbursement, and the organization's bookkeepers to review those requests and add them to the organization's books.  The primary umotivation for this project is to save time both groups spend on handling reimbursement requests, and reduce turnaround time for these requests, by helping members file complete requests that are easy for bookkeepers to review and accept.
+
+Members of the organization could be employees, members of projects represented by the organization, or others doing work to advance the organization's mission—anyone who the organization might want to reimburse.
+
+The system should not have knowledge of specific reimbursement policies written into it.  Instead, it should be possible for a bookkeeper or administrator to define follow-up questions and what responses are and are not eligible for reimbursement.  Early versions may require sysadmin-level technical expertise to do this, but ultimately it should be doable by a bookkeeper with appropriate privileges.
+
+## Requirements for first release
+
+### Defining the request form
+
+Requests for reimbursement have four states: In Progress, Submitted, Accepted, and Rejected.
+
+Administrators can define questions to ask the member about the entire request, and about each expense in the request.  The system can display forms, validate answers, and record answers for questions with the following types of answers: 
+
+* Text
+* Boolean (yes/no)
+* Selection (from a list of values)
+* Number
+* Currency (this is probably a string that's validated to have a numeric part plus an optional currency code)
+* Date
+* File upload
+
+For each question, the administrator can define any number of conditions to check against the member's answer.  When a member submits an answer that does not comply with all of the conditions, the answer is flagged in the interface as making the expense non-reimuburseable.  The first release must support the following conditions:
+
+* Boolean: is yes, or is no
+* Selection: the selected value is in a specific subset of values
+* Date: the value is N days before and/or after today or a date in another answer
+
+Using these same conditions, the administrator can define questions that are conditional on other questions' answers.  These questions are only presented to the member when they submit an answer that meets the specified conditions.  For illustration purposes, the common deployment is expected to have relatively few unconditional questions about each expense (type of expense, receipt, amount), and then a series of conditional questions based on those answers (e.g., follow-up questions specific to airfare expenses, accommodations expenses, etc.).
+
+### Member workflow
+
+Members can log in and see the status of all their requests.  They can also create a new request, which starts in the In Progress state.
+
+When they view a report, it shows the questions and answers about the entire report, and a list of associated expenses.  Viewing a specific expense similarly shows all the questions and answers about it.
+
+When a report is In Progress state, the member can edit any answer in the report or an associated expense.  They can also add an expense, which begins by asking them unconditional questions associated with expenses, and then follow-up questions as necessary based on those answers.
+
+When an In Progress report has at least one expense associated with it, and all questions have been answered, the member may submit the request for approval.  If any of the answers do not meet the administrator's conditions for reimbursement, the member may still submit the request, and provide an explanation for why the expense should be reimbursed (e.g., because it was approved in advance).  Once the request is submitted, it moves to the Submitted state.
+
+### Bookkeeper workflow
+
+Bookkeepers can log into the system and see all requests.
+
+When a bookkeeper reviews a Submitted report, they can change the report's state, and include a note explaining why the report was moved to that state (e.g., moved back to In Progress because a specific receipt was insufficient documentation).  When they do this, the system sends e-mail to the member letting them know about the change, including the rationale provided by the bookkeeper.
+
+The bookkeeper can export any request to the books.  The first release of the software will simply provide an archive that includes all of the request's supporting documentation, plus a `.ledger` file with entries for each expense.  However, note that when building this feature in the code and UI, it should be relatively generic.  Exporting needs to be abstract enough that it's simple to integrate with other accounting systems.  Even the mechanics may be different; for example, an SQLedger exporter may add entries to the system directly, rather than providing the bookkeeper with a file download.
+
+## Requirements potentially for first release
+
+These are features that we would like the system to have, and it may make sense to make them requirements of the first release depending on how it's built.
+
+* CiviCRM integration: Many NPOs are already using CiviCRM.  CiviCRM integration would provide a familiar interface to users, and simplify system administration for the organization.  It may be possible to build the system as a CiviCRM extension.  If so, we would get this feature for "free."
+* Usable without JavaScript: For consistent mission advocacy, it's important that some organizations not require members to use JavaScript.  (e.g., Tor browsers typically have JavaScript disabled because it can undermine Tor's anonymity guarantees.)  It should be possible to submit reimbursement requests without JavaScript.  The interface can be enhanced when JavaScript is available.
+  Whether or not we do this in the first release probably depends on what framework we decide to build on.  If the framework itself requires JavaScript out of the box, it may make sense to have the first release go with the flow, then work to add JavaScript-free functionality in a later release.
+
+## Requirements for later releases
+
+These are features that we would ultimately like the system to have, but we know aren't necessary for the first version.  It's good to keep them in mind when architecting, but also to know that they've been considered and aren't immediately necessary.
+
+* Allow optional questions: With this, question conditions probably need to be extended to address the case of "other question isn't answered"
+* Additional exporters:
+  * Export to SQLedger
+  * [Certainly many more, feel free to add them here]
+* Richer lifecycle management: A leader may need to approve a request before it's added to the books, like an employee's manager or a program director
+* Automatic currency conversion for validation (e.g., validate that an amount in an aribtrary currency is within a limit in USD)
+* Validate currency amounts from outside data sources: The main case for this is per diem, where many organizations use rates that are determined by another party (e.g., US GSA) and updated periodically.
+* Data import: Apps like [Tricky Tripper](http://trickytripper.blogspot.de/) let users track expenses for a trip as they go.  The system could import this data to prepopulate answers to questions about the request and expenses in it.  Probably there would be an import API that can map different import formats to a common format, and then administrators can define how questions in their system can be answered based on imported data.
