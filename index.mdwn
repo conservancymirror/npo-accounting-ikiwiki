@@ -8,15 +8,9 @@ Conservancy welcomes the help of anyone who is interested in this issue to
 design and develop this software.  If you want to get involved right now,
 look below for [[information about how to get involved with this project|index#howtohelp]].
 
-
-BTW, we're [[hoping to participate in GSoC 2014|GSoC2014Ideas]].  We think
-there are enough ideas for probably only one, maybe two, students.
-
-
 ## Phase 0
 
-Initially, during Phase 0 of this project,
-Conservancy is doing the following things:
+Conservancy has done the following:
 
 - [Writing a tutorial on a Ledger-CLI setup for fiscal sponsor 501(c)3 organizations](https://gitorious.org/ledger/npo-ledger-cli/).
 - [[Finding and evaluating existing Free Software accounting systems|ExistingProjects]].
@@ -24,7 +18,7 @@ Conservancy is doing the following things:
 
 ## Phase 1
 
-Phase 0 is nearly complete, and in Phase 1, we plan to:
+Phase 1 calls for the project to:
 
 - [Create an REST API for basic double-entry accounting, currently using Ledger-CLI as a backend](http://npoacct.sfconservancy.org/accounting-api/)
 - Add functionality to that API that already exists in the [documented Ledger-CLI setup for NPO's](https://gitorious.org/ledger/npo-ledger-cli/).
@@ -39,9 +33,9 @@ You can learn more about what we done so far on this project by:
 - Reading the [mailing list archives for this project](http://lists.sfconservancy.org/pipermail/npo-accounting/).
 - Reading the [the IRC logs of the #npoacct channel](/irclogs/).
 
+<a id="howtohelp"></a>
 Helping and Collaborating on this Project
 ========================
-<a id="howtohelp"></a>
 You can help us and/or collaborate with us on this project by:
 
   * Editing this Wiki!
@@ -56,17 +50,4 @@ You can help us and/or collaborate with us on this project by:
 
 About This Wiki
 ===============
-This wiki is powered by [[ikiwiki]], which allows for the Wiki contents to be stored in Git.
-
-There is a
-[mirror on Gitorious as well](https://gitorious.org/conservancy/npo-acct-wiki/),
-but [due to a bug in Gitorious](https://issues.gitorious.org/issues/333),
-this mirror isn't up to date.  We push to that repository on a regular basis,
-though.
-In the meantime, if you'd like write access via Git to this wiki, please just
-[ask for it on the mailing list](https://lists.sfconservancy.org/mailman/listinfo/npo-accounting)
-or ping joar or bkuhn on
-[#npoaccount on irc.freenode.net](irc:irc.freenode.net/npoacct).  You should
-however be able to edit this Wiki using the web interface, too.
-
-This Wiki also has a [[SandBox]].
+This wiki is powered by [[ikiwiki]], which allows for the Wiki contents to be stored in Git.  You can use the [[SandBox]] to experiment with ikiwiki's features and learn how to edit wiki pages.
