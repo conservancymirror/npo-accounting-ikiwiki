@@ -57,7 +57,7 @@ following conditions:
 Using these same conditions, the administrator can define questions that are
 conditional on other questions' answers.  These questions are only presented
 to the requestors when they submit an answer that meets the specified conditions.
-For illustration purposes, the common deployment is expected to have
+For illustration purposes, the canonical deployment will have
 relatively few unconditional questions about each expense (type of expense,
 receipt, amount), and then a series of conditional questions based on those
 answers (e.g., follow-up questions specific to airfare expenses,
@@ -98,7 +98,7 @@ Submitted state.
 
 Bookkeepers can log into the system and see all requests.
 
-When bookkeepers reviews a Submitted report, they can change the report's
+When bookkeepers review a Submitted report, they can change the report's
 state, and include a note explaining why the report was moved to that state
 (e.g., moved back to In Progress because a specific receipt was insufficient
 documentation).  When they do this, the system sends e-mail to the requestor
@@ -109,10 +109,11 @@ The bookkeeper can export any request to the books.  The first release of the
 software will simply provide an archive that includes all of the request's
 supporting documentation, plus a `.ledger` file with entries for each
 expense.  However, note that when building this feature in the code and UI,
-it should be relatively generic.  Exporting needs to be abstract enough that
-it's simple to integrate with other accounting systems.  Even the mechanics
-may be different; for example, an SQLedger exporter may add entries to the
-system directly, rather than providing the bookkeeper with a file download.
+it should be relatively generic.  Exporting should remain abstract enough
+that integration with other accounting systems remains simple and
+straightforward.  Note that even the mechanics could be different; for
+example, an SQLedger exporter may add entries to the system directly, rather
+than providing the bookkeeper with a file download.
 
 ## Requirements potentially for first release
 
@@ -153,6 +154,7 @@ be extended to address the case of "other question isn't answered"
 * Additional exporters:
   * Export to SQLedger
   * [Certainly many more, feel free to add them here]
+
 * Richer lifecycle management: A leader may need to approve a request before
   it's added to the books, like an employee's manager or a program director
 
