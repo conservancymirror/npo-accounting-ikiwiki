@@ -156,12 +156,23 @@ be extended to address the case of "other question isn't answered"
 * Richer lifecycle management: A leader may need to approve a request before
   it's added to the books, like an employee's manager or a program director
 
-* Automatic currency conversion for validation (e.g., validate that an amount
-  in an aribtrary currency is within a limit in USD)
+* Various currency improvements:
+   * Automatic currency conversion for validation (e.g., validate that an amount
+     in an aribtrary currency is within a limit in USD)
 
-* Validate currency amounts from outside data sources: The main case for this
-  is per diem, where many organizations use rates that are determined by
-  another party (e.g., US GSA) and updated periodically.
+   * Validate currency amounts from outside data sources: The main case for
+     this is per diem, where many organizations use rates that are determined
+     by another party (e.g., US GSA) and updated periodically.
+
+   * Handle totaling the request based on currency (e.g., expenses can are in
+     USD, EUR, CHR but the traveler may want payment in INR.)  Unclear what
+     interface for this would look like, but real-time data about past
+     currency rates might be available via an API somewhere, and we can use
+     that to have the requestor give us "preferred currency for payment" so
+     all changes happen in real time in the interface (even allowing the
+     requestor to be able to decide *while filling out the report*: "ugh,
+     these exchange rates to INR are horrible; I'll have them pay my USD
+     account instead").
   
 * Data import: Apps like [Tricky Tripper](http://trickytripper.blogspot.de/)
   let users track expenses for a trip as they go.  The system could import
