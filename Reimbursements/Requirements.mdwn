@@ -37,31 +37,25 @@ forms, validate answers, and record answers for questions with the following
 types of answers:
 
 * Text
-* Boolean (yes/no)
 * Selection (from a list of values)
 * Number
-* Currency (this is probably a string that's validated to have a numeric part plus an optional currency code)
-* Date
+* Currency (We may not need strict validation, but the system must at least
+  understand that different currencies exist, and be able to validate that a
+  currency is specified when needed.  Using a plain Number for currency is
+  not sufficient.)
 * File upload
 
-For each question, the administrator can define any number of conditions to
-check against the requestor's answer.  When a requestor submits an answer that does
-not comply with all of the conditions, the answer is flagged in the interface
-as making the expense non-reimuburseable.  The first release must support the
-following conditions:
+Other types like boolean and date would be nice, but I think they could be
+expressed with the types above.
 
-* Boolean: is yes, or is no
-* Selection: the selected value is in a specific subset of values
-* Date: the value is N days before and/or after today or a date in another answer
-
-Using these same conditions, the administrator can define questions that are
-conditional on other questions' answers.  These questions are only presented
-to the requestors when they submit an answer that meets the specified conditions.
-For illustration purposes, the canonical deployment will have
-relatively few unconditional questions about each expense (type of expense,
-receipt, amount), and then a series of conditional questions based on those
-answers (e.g., follow-up questions specific to airfare expenses,
-accommodations expenses, etc.).
+It is expected that one question about expenses will be the type of expense
+(e.g., airfare, accommodations, meals, office supplies).  The administrator
+must be able to define follow-up questions that are asked based on the
+expense type, to request additional information as required by policy.  For
+example, Conservancy requires airfare search results to be attached to
+airfare reimbursement requests.  Requestors should be prompted for this
+documentation when submitting reimbursements for flights, and not for other
+expenses.
 
 ### Requestor workflow
 
@@ -75,16 +69,15 @@ similarly shows all the questions and answers about it.
 
 When a report is In Progress state, the requestor can edit any answer in the
 report or an associated expense.  They can also add an expense, which begins
-by asking them unconditional questions associated with expenses, and then
+by asking them questions common to all expenses, and then
 follow-up questions as necessary based on those answers.
 
 When an In Progress report has at least one expense associated with it, and
 all questions have been answered, the requestor may submit the request for
-approval.  If any of the answers do not meet the administrator's conditions
-for payment, the requestor may still submit the request, and provide an
-explanation for why the request should be paid (e.g., because it was
-approved in advance).  Once the request is submitted, it moves to the
-Submitted state.
+approval, along with optional notes about the request.
+Once the request is submitted, it moves to the Submitted state.
+Bookkeepers receive an e-mail notification that the request is ready for
+review, including the notes written by the requestor.
 
 ### Bookkeeper workflow
 
@@ -147,9 +140,41 @@ existing system to use, or framework to build on, based on its ability to
 support these features.  However, they needn't be a focus of development
 effort for the first release.
 
+* Administrator-defined policy validations
+
+  Some validations we would like to have:
+
+  * A value from a selection is in a specific subset of values
+
+  * A date is within N days before and/or after today or a date in another answer
+
+  * A currency amount is over or under a limit, with automatic conversion as needed
+
+  * The limit on a currency amount is defined by an outside source - The
+    main case for this is per diem, where many organizations use rates that
+    are determined by another party like the US GSA and updated periodically.
+
+  These may need to be compounded.  For example, an administrator may want
+  to define a policy, "If an employee did not use a preferred airline, and
+  did not travel internationally, it does not meet policy."
+
+* Flag non-reimburseable expenses based on policy validations
+
+  When the requestor answers questions that are outside the policy
+  validations, the system should flag the answer and explain how it falls
+  outside policy.  The requestor should still be able to submit the request,
+  but they should be prompted to explain why the request should be fulfilled
+  despite policy problems.
+
+* Ask additional questions based on policy validations
+
+  For example, "If the expense type is office supplies, and the cost is over
+  $50, prompt for a receipt."
+
 * Allow optional questions
-  * Along with this, question conditions probably need to
-    be extended to address the case of "other question isn't answered"
+
+  Along with this, policy validations probably need to
+  be extended to address the case of "other question isn't answered"
 
 * Additional exporters
   * Export to SQLedger
@@ -169,23 +194,16 @@ effort for the first release.
   * A leader may need to approve a request before
     it's added to the books, like an employee's manager or a program director
 
-* Various currency improvements
-   * Automatic currency conversion for validation (e.g., validate that an amount
-     in an aribtrary currency is within a limit in USD)
+* Show currency amounts in the requestor's reimbursement currency
 
-   * Validate currency amounts from outside data sources: The main case for
-     this is per diem, where many organizations use rates that are determined
-     by another party (e.g., US GSA) and updated periodically.
-
-   * Handle totaling the request based on currency (e.g., expenses can are in
-     USD, EUR, CHR but the traveler may want payment in INR.)  Unclear what
-     interface for this would look like, but real-time data about past
-     currency rates might be available via an API somewhere, and we can use
-     that to have the requestor give us "preferred currency for payment" so
-     all changes happen in real time in the interface (even allowing the
-     requestor to be able to decide *while filling out the report*: "ugh,
-     these exchange rates to INR are horrible; I'll have them pay my USD
-     account instead").
+  For example, the requestor can submit a reimbursement with expenses in
+  USD, EUR, and CHR, but wants payment in INR.  Unclear what
+  interface for this would look like, but real-time data about past currency
+  rates might be available via an API somewhere, and we can use that to have
+  the requestor give us "preferred currency for payment" so all changes
+  happen in real time in the interface (even allowing the requestor to be
+  able to decide *while filling out the report*: "ugh, these exchange rates
+  to INR are horrible; I'll have them pay my USD account instead").
   
 * Data import
   * Apps like [Tricky Tripper](http://trickytripper.blogspot.de/) let users
