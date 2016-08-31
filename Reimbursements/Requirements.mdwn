@@ -4,7 +4,7 @@
 
 One short-term goal of the Non-Profit Accounting Project is to create a
 system that allows (a) members of an organization, and external parties, to
-submit requests for reimbursement or request for payment (e.g., invoices),
+submit requests for reimbursement or request for payment like invoices,
 and (b) the organization's bookkeepers, accountants, and managerial approvers
 to review those requests, add them to the organization's books, and prepare
 payment.  The primary motivation for this project is to save time both groups
@@ -92,10 +92,10 @@ Bookkeepers can log into the system and see all requests.
 
 When bookkeepers review a Submitted report, they can change the report's
 state, and include a note explaining why the report was moved to that state
-(e.g., moved back to In Progress because a specific receipt was insufficient
-documentation).  When they do this, the system sends email to the requestor
-letting them know about the change, including the rationale provided by the
-bookkeeper.
+(for example, the bookkeeper moved the request back to In Progress because a
+specific receipt was insufficient documentation).  When they do this, the
+system sends email to the requestor letting them know about the change,
+including the rationale provided by the bookkeeper.
 
 The bookkeeper can export any request to the books.  The first release of the
 software will simply provide an archive that includes all of the request's
@@ -120,9 +120,11 @@ built.
   "free."
   
 * Usable without JavaScript: For consistent mission advocacy, it's important
-  that some organizations not require requestor to use JavaScript.  (e.g., Tor
-  browsers typically have JavaScript disabled because it can undermine Tor's
-  anonymity guarantees.)  It should be possible to submit payment
+  that some organizations not require requestors to use JavaScript.  For
+  example, Tor browsers typically have JavaScript disabled because it can
+  undermine Tor's anonymity guarantees; organiziations supporting Tor must
+  support these users.
+  It should be possible to submit payment
   requests without JavaScript.  The interface can be enhanced when JavaScript
   is available.
   
@@ -145,10 +147,11 @@ existing system to use, or framework to build on, based on its ability to
 support these features.  However, they needn't be a focus of development
 effort for the first release.
 
-* Allow optional questions: With this, question conditions probably need to
-be extended to address the case of "other question isn't answered"
+* Allow optional questions
+  * Along with this, question conditions probably need to
+    be extended to address the case of "other question isn't answered"
 
-* Additional exporters:
+* Additional exporters
   * Export to SQLedger
   * [Certainly many more, feel free to add them here]
 
@@ -166,7 +169,7 @@ be extended to address the case of "other question isn't answered"
   * A leader may need to approve a request before
     it's added to the books, like an employee's manager or a program director
 
-* Various currency improvements:
+* Various currency improvements
    * Automatic currency conversion for validation (e.g., validate that an amount
      in an aribtrary currency is within a limit in USD)
 
@@ -184,10 +187,10 @@ be extended to address the case of "other question isn't answered"
      these exchange rates to INR are horrible; I'll have them pay my USD
      account instead").
   
-* Data import: Apps like [Tricky Tripper](http://trickytripper.blogspot.de/)
-  let users track expenses for a trip as they go.  The system could import
-  this data to prepopulate answers to questions about the request and
-  expenses in it.  Probably there would be an import API that can map
-  different import formats to a common format, and then administrators can
-  define how questions in their system can be answered based on imported
-  data.
+* Data import
+  * Apps like [Tricky Tripper](http://trickytripper.blogspot.de/) let users
+    track expenses for a trip as they go.  The system could import this data
+    to prepopulate answers to questions about the request and expenses in
+    it.  Probably there would be an import API that can map different import
+    formats to a common format, and then administrators can define how
+    questions in their system can be answered based on imported data.
