@@ -177,10 +177,13 @@ effort for the first release.
   be extended to address the case of "other question isn't answered"
 
 * Additional exporters
+
   * Export to SQLedger
+
   * [Certainly many more, feel free to add them here]
 
 * Richer lifecycle management
+
   * Support requests for pre-approval, probably with two states
     "Pre-Approval In Progress" and "Pre-Approval Submitted."  In the
     Pre-Approval state, the requestor is submitting not receipts or
@@ -206,6 +209,7 @@ effort for the first release.
   to INR are horrible; I'll have them pay my USD account instead").
   
 * Data import
+
   * Apps like [Tricky Tripper](http://trickytripper.blogspot.de/) let users
     track expenses for a trip as they go.  The system could import this data
     to prepopulate answers to questions about the request and expenses in
