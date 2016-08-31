@@ -194,8 +194,22 @@ effort for the first release.
     requests, and their approval moves the request into the In Progress
     state.  Their rejection moves the request to the Rejected sate.
 
-  * A leader may need to approve a request before
-    it's added to the books, like an employee's manager or a program director
+  * Support more review: a leader (such as a manager or program
+    director) may need to review and approve a request along with, or
+    instead of, the bookkeeper
+
+    * Support automatically determining the appropriate leader for a
+      payment request based on information in the request, like a
+      "What project is this for?" selection
+
+  * A new state after Approved, Filled, which means that the
+    organization has arranged for payment to go out.  The requestor
+    should receive a notification when their request moves to the
+    Filled state.
+
+  * A new state after Filled, Received, which means the requestor
+    received payment.  Bookkeepers should receive a notification when
+    the request moves to this state.
 
 * Show currency amounts in the requestor's reimbursement currency
 
