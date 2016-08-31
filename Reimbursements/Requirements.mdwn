@@ -137,10 +137,13 @@ built.
 
 ## Requirements for later releases
 
-These are features that we would ultimately like the system to have, but we
-know aren't possible for the first version given time allotted for its
-development.  It's good to keep them in mind when architecting, but also to
-know that they've been considered and aren't immediately possible.
+These are features that we would ultimately like the system to have.  We
+would also like to release a first version as early as possible, to start
+getting feedback from users and generating more development interest.  It's
+good to keep these in mind when architecting—in particular, we may choose an
+existing system to use, or framework to build on, based on its ability to
+support these features.  However, they needn't be a focus of development
+effort for the first release.
 
 * Allow optional questions: With this, question conditions probably need to
 be extended to address the case of "other question isn't answered"
