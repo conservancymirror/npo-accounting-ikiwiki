@@ -2,13 +2,32 @@ NPO Accounting Software Project
 ====================
 
 [Software Freedom Conservancy](https://sfconservancy.org/) is leading an
-[effort to create accounting software for non-profit organizations](https://sfconservancy.org/campaign/).
+[effort to create accounting software for non-profit organizations](https://sfconservancy.org/npoacct/).
 
+Current Status
+==============
+
+We're currently planning a Reimbursement and Payment Request system.  We
+believe this is a relatively standalone component that other organizations
+could start using quickly.  Check out the
+[[requirements document|Reimbursemenets/Requirements]] and let us know if
+you think anything's missing.  Software development will begin soon.
+
+<a id="howtohelp"></a>
+Contributing to the Project
+========================
 Conservancy welcomes the help of anyone who is interested in this issue to
-design and develop this software.  If you want to get involved right now,
-look below for [[information about how to get involved with this project|index#howtohelp]].
+design and develop this software.  You can help us by:
 
-## Phase 0
+  * Editing this Wiki!
+  * Joining the discussion on [the mailing list for this project](https://lists.sfconservancy.org/mailman/listinfo/npo-accounting)
+  * Joining the discussion on
+    [the IRC channel, #npoacct on irc.freenode.net](irc:irc.freenode.net/npoacct) ([logs](/irclogs/)).
+  * Submit patches and merge requests to [npo-accounting Ledger CLI tutorial](https://gitorious.org/ledger/npo-ledger-cli/).
+  * [Donating money to fund this effort!](https://sfconservancy.org/campaign/)
+
+Work So Far
+===========
 
 Conservancy has done the following:
 
@@ -16,36 +35,6 @@ Conservancy has done the following:
 - [[Finding and evaluating existing Free Software accounting systems|ExistingProjects]].
 - [[Writing use cases for non-profit accounting|UseCases]].
 
-## Phase 1
-
-Phase 1 calls for the project to:
-
-- [Create an REST API for basic double-entry accounting, currently using Ledger-CLI as a backend](http://npoacct.sfconservancy.org/accounting-api/)
-- Add functionality to that API that already exists in the [documented Ledger-CLI setup for NPO's](https://gitorious.org/ledger/npo-ledger-cli/).
-- Create various reports using that API, to flush out improvements that are needed.
-
-Learning more about this project
-========================
-
-You can learn more about what we done so far on this project by:
-
-- Reading this Wiki!
-- Reading the [mailing list archives for this project](http://lists.sfconservancy.org/pipermail/npo-accounting/).
-- Reading the [the IRC logs of the #npoacct channel](/irclogs/).
-
-<a id="howtohelp"></a>
-Helping and Collaborating on this Project
-========================
-You can help us and/or collaborate with us on this project by:
-
-  * Editing this Wiki!
-  * Submit patches and merge requests to [accounting API repository](http://npoacct.sfconservancy.org/accounting-api/).
-  * Submit patches and merge requests to [npo-accounting Ledger CLI tutorial](https://gitorious.org/ledger/npo-ledger-cli/).
-  * Joining the discussion on [the mailing list for this project](https://lists.sfconservancy.org/mailman/listinfo/npo-accounting)
-  * Joining the discussion on
-    [the IRC channel, #npoacct on irc.freenode.net](irc:irc.freenode.net/npoacct).
-  * [Donating money to fund this effort!](https://sfconservancy.org/campaign/)
-  
 ----
 
 About This Wiki
