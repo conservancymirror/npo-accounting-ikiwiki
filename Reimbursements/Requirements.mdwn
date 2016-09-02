@@ -28,7 +28,7 @@ doable by a bookkeeper with appropriate privileges.
 
 ### Defining the request form
 
-Requests for payment have four states: In Progress, Submitted,
+Requests for payment have four states: Draft, Submitted,
 Accepted, and Rejected.
 
 Administrators can define questions to ask the requestor about the entire
@@ -60,19 +60,19 @@ expenses.
 ### Requestor workflow
 
 Requestors can log in and see the status of all their requests.  They can also
-create a new request, which starts in the In Progress
+create a new request, which starts in the Draft
 state.
 
 When they view a report, it shows the questions and answers about the entire
 report, and a list of associated expenses.  Viewing a specific expense
 similarly shows all the questions and answers about it.
 
-When a report is In Progress state, the requestor can edit any answer in the
+When a report is Draft state, the requestor can edit any answer in the
 report or an associated expense.  They can also add an expense, which begins
 by asking them questions common to all expenses, and then
 follow-up questions as necessary based on those answers.
 
-When an In Progress report has at least one expense associated with it, and
+When an Draft report has at least one expense associated with it, and
 all questions have been answered, the requestor may submit the request for
 approval, along with optional notes about the request.
 Once the request is submitted, it moves to the Submitted state.
@@ -85,7 +85,7 @@ Bookkeepers can log into the system and see all requests.
 
 When bookkeepers review a Submitted report, they can change the report's
 state, and include a note explaining why the report was moved to that state
-(for example, the bookkeeper moved the request back to In Progress because a
+(for example, the bookkeeper moved the request back to Draft because a
 specific receipt was insufficient documentation).  When they do this, the
 system sends email to the requestor letting them know about the change,
 including the rationale provided by the bookkeeper.
@@ -185,13 +185,13 @@ effort for the first release.
 * Richer lifecycle management
 
   * Support requests for pre-approval, probably with two states
-    "Pre-Approval In Progress" and "Pre-Approval Submitted."  In the
+    "Pre-Approval Draft" and "Pre-Approval Submitted."  In the
     Pre-Approval state, the requestor is submitting not receipts or
     invoices, but documents regarding potential expenses that have not yet
     been incurred, but for which organization policies require preapproval
     by organizational management ahead of time.  The appropriate management
     representatives are duly notified by the system of pending Pre-Approval
-    requests, and their approval moves the request into the In Progress
+    requests, and their approval moves the request into the Draft
     state.  Their rejection moves the request to the Rejected sate.
 
   * Support more review: a leader (such as a manager or program
