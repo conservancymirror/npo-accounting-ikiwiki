@@ -222,6 +222,13 @@ effort for the first release.
   able to decide *while filling out the report*: "ugh, these exchange rates
   to INR are horrible; I'll have them pay my USD account instead").
   
+## Desired features
+
+These are features that we would also, ultimately, like the system to
+have.  But they're not as critical as the features in the previous
+section, and they don't need to hold as much sway over the choice of a
+base system or framework.
+
 * Data import
 
   * Apps like [Tricky Tripper](http://trickytripper.blogspot.de/) let users
@@ -230,3 +237,15 @@ effort for the first release.
     it.  Probably there would be an import API that can map different import
     formats to a common format, and then administrators can define how
     questions in their system can be answered based on imported data.
+
+* Provide iCalendar feeds for request-related tasks
+
+  We could implement any combination of the following:
+
+  * Each request has its own iCalendar feed
+
+  * Each user has their own iCalendar feed, which includes tasks for
+    all the requests they're involved in
+
+  * Each user has their own iCalendar feed, with deadlines aggregated
+    within it (e.g., "3 requests outstanding more than 60 days")
