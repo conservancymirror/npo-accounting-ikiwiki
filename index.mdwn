@@ -10,7 +10,7 @@ Current Status
 We're currently planning a Reimbursement and Payment Request system.  We
 believe this is a relatively standalone component that other organizations
 could start using quickly.  Check out the
-[[requirements document|Reimbursemenets/Requirements]] and let us know if
+[[requirements document|Reimbursements/Requirements]] and let us know if
 you think anything's missing.  Software development will begin soon.
 
 <a id="howtohelp"></a>
