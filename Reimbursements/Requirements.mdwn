@@ -238,6 +238,19 @@ base system or framework.
     formats to a common format, and then administrators can define how
     questions in their system can be answered based on imported data.
 
+* Automatically prepare payment
+
+  * Print checks with the requestor's name and approved amount
+
+  * Automatically submit wire transfers through standard APIs like HBCI
+
+  [I think this is required functionality for the NPO Accounting Project in
+  the long term, but there are probably other solutions if it's not
+  included directly in this reimbursement system.  I think we'd be willing
+  to use an existing system or framework that didn't have a good way to
+  provide this functionality, as long as there could be another way to build
+  it.]
+
 * Provide iCalendar feeds for request-related tasks
 
   We could implement any combination of the following:
