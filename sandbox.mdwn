@@ -37,7 +37,7 @@ Bulleted list
 
 * continuing the list at the top level
 
-Paragraph with `inline code`
+Paragraph with `inline code` which can occur `multiple times`
 
       code block
       it's a block of code
