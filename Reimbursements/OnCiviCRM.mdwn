@@ -1,0 +1,36 @@
+# CiviCRM extension plan
+
+One possibility for building the reimbursement system is to make a CiviCRM extension.
+
+The reimbursement system's early development is focused primarily on helping requestors submit a complete reimbursement request, and helping bookkeepers add those requests to the books quickly.  Actual accounting primarily enters the picture at the end of the process, when the bookkeeper is ready to accept a request into the books.  From this perspective, CiviCRM provides a lot of fuctionality the core system would need:
+
+* Users related to an organization, with different access levels
+* Users outside the organization can log in and submit forms
+* Forms customizable by sysadmins
+* Request tracking, with e-mail updates
+
+A CiviCRM extension will probably be easier for other organizations to adopt as well.  Those that already have CiviCRM installed will already have most of the necessary deployment infrastructure, and probably experience working with other CiviCRM extensions already.
+
+Think of this as a shared notepad: it's a place to discuss implementation ideas and notes.  We might be missing information about specific CiviCRM functionality, and may not be following all the best practices.  If you know something we don't, please feel free to jump in and make suggestions!
+
+## Extending CiviCase
+
+CiviCase seems to provide a useful base to build the reimbursement system from.  A "case" in CiviCRM parlance represents an ongoing interaction with someone outside the organization.  It has expected workflows and timelines, and can end in a few different states.  Actions on cases are recorded, and everyone involved can get e-mail updates about those changes.  All of these map very well to the workflow imagined in the requirements document.
+
+It seems reasonable to implement the whole request for reimbursement as a case.  The question from there is how to add the variable expense information to it.
+
+## How to represent expenses and build forms for them
+
+It's tempting to use Activities to represent expenses.  Activities represent someone doing something; the core information is all relevant to expenses; and they can have custom fields attached to them, representing the additional information required for each type of expense.
+
+But it seems like the mental model for Activities is closer to "things the organization itself does."  The docs say, "If it is important for you to know who at your organisation carried out a task, then record it as an activity."  That rationale doesn't consistently apply to expenses.  Because of that, I wonder if representing expenses as different kinds of Activities would lead to trouble down the line.
+
+It might be safer to introduce a new Expense object type.  Functionally it might act very similarly to Activities, but keeping them separate in the system and UI would prevent trouble if they need to grow in different directions in the future.  In particular, if we could attach custom fields to them, that means a lot of CiviCRM's existing field building functionality would meet our needs.
+
+## Saving files associated with expenses
+
+Out of the box, files that are uploaded to CiviCRM (e.g., attachments) go to the framework's public files directory.  This means that anybody who knows the filename can get the file, even if they're not logged into the system.  This doesn't seem secure enough for files that might include sensitive financial information.
+
+On a new install, at least, you can configure CiviCRM to save file uploads to a different directory.  It would suit our purposes if this was a non-accessible directory; then our extension could serve the files to people who were authorized to view them.
+
+But this configuration change might be difficult on existing CiviCRM installs, or interact poorly with other extensions.  Is there a more fine-grained way to impose ACLs on uploaded files?
