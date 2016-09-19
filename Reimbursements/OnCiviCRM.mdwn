@@ -31,6 +31,8 @@ It might be safer to introduce a new Expense object type.  Functionally it might
 
 Out of the box, files that are uploaded to CiviCRM (e.g., attachments) go to the framework's public files directory.  This means that anybody who knows the filename can get the file, even if they're not logged into the system.  This doesn't seem secure enough for files that might include sensitive financial information.
 
-On a new install, at least, you can configure CiviCRM to save file uploads to a different directory.  It would suit our purposes if this was a non-accessible directory; then our extension could serve the files to people who were authorized to view them.
+On a new install, at least, you can configure CiviCRM to save file uploads to a different directory by changing Directory Preferences→uploadDir.  It would suit our purposes if this was a non-accessible directory; then our extension could serve the files to people who were authorized to view them.
 
-But this configuration change might be difficult on existing CiviCRM installs, or interact poorly with other extensions.  Is there a more fine-grained way to impose ACLs on uploaded files?
+[CiviCRM recommends making this configuration change](https://civicrm.org/advisory/civi-sa-2014-001-risk-information-disclosure).  Given that, I think we can count on administrators to have done so, and be satisfied with the security on the uploads directory, even though it's out of our hands.
+
+Note that we'll need to be careful to make sure files go to `uploadDir`, and not `imageUploadDir`, where anonymous web access still needs to be allowed.
