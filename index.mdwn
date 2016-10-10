@@ -15,15 +15,14 @@ could start using quickly.  Check out the [[project page|Reimbursements]].
 Contributing to the Project
 ========================
 Conservancy welcomes the help of anyone who is interested in this issue to
-design and develop this software.  You can help us by:
+design and develop this software.
 
-  * Editing this Wiki!
-  * Joining the discussion on [the mailing list for this project](https://lists.sfconservancy.org/mailman/listinfo/npo-accounting)
-  * Joining the discussion on
-    [the IRC channel, #npoacct on irc.freenode.net](irc:irc.freenode.net/npoacct) ([logs](/irclogs/)).
-  * Submit patches and merge requests to [npo-accounting Ledger CLI tutorial](https://gitorious.org/ledger/npo-ledger-cli/).
-  * [Donating money to fund this effort!](https://sfconservancy.org/campaign/)
   * Contribute to our [CiviCRM extension for payment requests](https://k.sfconservancy.org/NPO-Accounting/civipay).
+  * Edit this Wiki.
+  * Join the [mailing list for this project](https://lists.sfconservancy.org/mailman/listinfo/npo-accounting)
+  * Join the discussion on
+    [our IRC channel, #npoacct on irc.freenode.net](irc:irc.freenode.net/npoacct) ([logs](/irclogs/)).
+  * [Donate money to fund this effort!](https://sfconservancy.org/campaign/)
 
 Work So Far
 ===========
