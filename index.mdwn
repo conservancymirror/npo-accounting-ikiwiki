@@ -7,11 +7,9 @@ NPO Accounting Software Project
 Current Status
 ==============
 
-We're currently planning a Reimbursement and Payment Request system.  We
+We're currently developing a Reimbursement and Payment Request system.  We
 believe this is a relatively standalone component that other organizations
-could start using quickly.  Check out the
-[[requirements document|Reimbursements/Requirements]] and let us know if
-you think anything's missing.  Software development will begin soon.
+could start using quickly.  Check out the [[project page|Reimbursements]].
 
 <a id="howtohelp"></a>
 Contributing to the Project
@@ -25,6 +23,7 @@ design and develop this software.  You can help us by:
     [the IRC channel, #npoacct on irc.freenode.net](irc:irc.freenode.net/npoacct) ([logs](/irclogs/)).
   * Submit patches and merge requests to [npo-accounting Ledger CLI tutorial](https://gitorious.org/ledger/npo-ledger-cli/).
   * [Donating money to fund this effort!](https://sfconservancy.org/campaign/)
+  * Contribute to our [CiviCRM extension for payment requests](https://k.sfconservancy.org/NPO-Accounting/civipay).
 
 Work So Far
 ===========
