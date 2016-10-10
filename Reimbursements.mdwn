@@ -1,0 +1,13 @@
+# Payment Request software project
+
+Many non-profit organizations in our space handle payment requests from various parties, like reimbursement requests from employees and volunteers.  Handling these requests can be arduous for both sides: organizations often have nuanced rules for what can be reimbursed when, meaning it's work for requesters to be sure what they should submit, and work for the organization to make sure everything in a request is acceptable.
+
+This software will help organizations set up web forms that walk requesters through the process of filing a payment request.  It will prompt requesters for all the necessary documentation, and automatically validate that submissions meet the organization's payment criteria.  This guidance will help requesters make a submission that can be paid the first time, reducing lengthy reviews and back-and-forth.
+
+Once a request has been accepted, the software will be able export the payment request to the organization's books.  No more time-consuming and error-prone manual data copying.  And since this is a relatively limited interface to the organization's finances, this is a self-contained system we can develop now to get organizations started using NPO Accounting software without committing to a big change in their existing systems.
+
+We've started developing an extension to CiviCRM to add this functionality.  Check out the [Git repository on Conservancy's Kallithea server](https://k.sfconservancy.org/NPO-Accounting/civipay).
+
+If you'd like to dive in, we have [[implementation notes for CiviCRM|Reimbursements/OnCiviCRM]], which provides some technical background for how the extension is built.
+
+To read more about what we're building, including plans for near- and long-term development, see our [[requirements document|Reimbursements/Requirements]].
