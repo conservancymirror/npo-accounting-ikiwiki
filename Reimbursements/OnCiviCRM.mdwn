@@ -36,3 +36,7 @@ On a new install, at least, you can configure CiviCRM to save file uploads to a 
 [CiviCRM recommends making this configuration change](https://civicrm.org/advisory/civi-sa-2014-001-risk-information-disclosure).  Given that, I think we can count on administrators to have done so, and be satisfied with the security on the uploads directory, even though it's out of our hands.
 
 Note that we'll need to be careful to make sure files go to `uploadDir`, and not `imageUploadDir`, where anonymous web access still needs to be allowed.
+
+## Money type
+
+CiviCRM's Money type simply ensures that the input is numeric, with up to two decimal points.  See [this regexp](https://github.com/civicrm/civicrm-core/blob/4.7.12/CRM/Utils/Rule.php#L557).  It does not, out of the box, support specifying a currency.  When forms call for a money input, it will probably be implemented as two inputs: a Currency pulldown (which we can implement and install so administrators don't have to define it themselves), and a Money input for the numeric part.
