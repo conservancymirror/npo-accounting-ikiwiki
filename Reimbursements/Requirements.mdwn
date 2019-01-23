@@ -179,7 +179,9 @@ effort for the first release.
 * Additional exporters
 
   * Export to SQLedger
-
+  
+  * Export to LedgerSMB
+ 
   * [Certainly many more, feel free to add them here]
 
 * Richer lifecycle management
